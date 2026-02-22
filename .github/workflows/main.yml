@@ -5,7 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22' # Ye line error theek karegi
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
