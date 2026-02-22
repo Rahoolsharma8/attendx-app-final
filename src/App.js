@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [screen, setScreen] = useState('splash'); // splash, home, marking
+  const [screen, setScreen] = useState('splash'); 
   const [selectedDept, setSelectedDept] = useState(null);
   const [selectedClass, setSelectedClass] = useState(null);
+  const [attendance, setAttendance] = useState({});
 
-  // Splash Screen Logic
+  // Splash Screen Timer
   useEffect(() => {
-    setTimeout(() => setScreen('home'), 2500);
+    const timer = setTimeout(() => setScreen('home'), 2500);
+    return () => clearTimeout(timer);
   }, []);
 
   const departments = [
@@ -17,6 +19,11 @@ function App() {
     { name: 'AI - Artificial Intelligence', classes: ['AI1', 'AI2'] }
   ];
 
+  const markAttendance = (id, status) => {
+    setAttendance(prev => ({ ...prev, [id]: status }));
+  };
+
+  // 1. SPLASH SCREEN
   if (screen === 'splash') {
     return (
       <div className="splash-screen">
@@ -29,15 +36,16 @@ function App() {
     );
   }
 
+  // 2. HOME SCREEN (DEPARTMENT DROPDOWNS)
   if (screen === 'home') {
     return (
-      <div className="app-container glass-bg">
+      <div className="app-container">
         <header className="pro-header">
           <div className="umpk-branding">
             <span className="logo-small">🎓</span>
             <div>
               <h3>UMPK Portal</h3>
-              <p>CS Department</p>
+              <p>Developed by CS Department</p>
             </div>
           </div>
         </header>
@@ -48,8 +56,11 @@ function App() {
 
           <div className="dept-list">
             {departments.map((dept, index) => (
-              <div key={index} className="dept-section">
-                <button className="dept-btn glass" onClick={() => setSelectedDept(selectedDept === index ? null : index)}>
+              <div key={index} className="dept-wrapper">
+                <button 
+                  className={`dept-btn glass ${selectedDept === index ? 'active-dept' : ''}`} 
+                  onClick={() => setSelectedDept(selectedDept === index ? null : index)}
+                >
                   {dept.name} <span>{selectedDept === index ? '▲' : '▼'}</span>
                 </button>
                 
@@ -67,17 +78,21 @@ function App() {
             ))}
           </div>
         </main>
-        <footer className="pro-footer">Developed by UMPK CS Department</footer>
+        <footer className="pro-footer">© 2024 UMPK CS Department</footer>
       </div>
     );
   }
 
+  // 3. MARKING INTERFACE
   if (screen === 'marking') {
     return (
       <div className="app-container">
         <header className="pro-header">
-          <button className="back-btn" onClick={() => setScreen('home')}>← Back</button>
-          <h3>Marking {selectedClass}</h3>
+          <button className="back-btn" onClick={() => setScreen('home')}>←</button>
+          <div className="header-info">
+            <h3>Marking {selectedClass}</h3>
+            <p>CS Department, UMPK</p>
+          </div>
         </header>
 
         <main className="main-content">
@@ -87,21 +102,25 @@ function App() {
           </div>
 
           <div className="student-list">
-             {[1, 2, 3, 4, 5].map(i => (
-               <div key={i} className="student-card glass">
-                 <div>
+             {[1, 2, 3, 4, 5, 6].map(i => (
+               <div key={i} className={`student-card glass ${attendance[i] === 'P' ? 'border-p' : attendance[i] === 'A' ? 'border-a' : ''}`}>
+                 <div className="student-info">
                    <p className="roll">Roll #00{i}</p>
                    <p className="name">Student Name {i}</p>
                  </div>
                  <div className="pa-buttons">
-                   <button className="btn-p">P</button>
-                   <button className="btn-a">A</button>
+                   <button 
+                     className={`btn-p ${attendance[i] === 'P' ? 'active-p' : ''}`} 
+                     onClick={() => markAttendance(i, 'P')}>P</button>
+                   <button 
+                     className={`btn-a ${attendance[i] === 'A' ? 'active-a' : ''}`} 
+                     onClick={() => markAttendance(i, 'A')}>A</button>
                  </div>
                </div>
              ))}
           </div>
 
-          <button className="submit-btn" onClick={() => alert('PDF Generated and Saved to Downloads!')}>
+          <button className="submit-btn" onClick={() => alert('PDF Report Generated for ' + selectedClass)}>
             SUBMIT & GENERATE PDF
           </button>
         </main>
