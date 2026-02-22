@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css'; // <--- Sirf ye rakhein, App.css wali line mita dein
+import './index.css'; // Hum sirf index.css use karenge
 
 function App() {
   return (
