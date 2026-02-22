@@ -1,26 +1,19 @@
-/* src/App.css */
 .app-container {
   max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: #f8fafc;
+  background: white;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
 .header {
-  background: white;
-  padding: 15px 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   gap: 12px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.header h1 {
-  font-size: 18px;
-  color: #1e293b;
-  margin: 0;
+  border-bottom: 1px solid #eee;
 }
 
 .main-content {
@@ -28,14 +21,11 @@
   flex: 1;
 }
 
-.title-section {
-  margin-bottom: 25px;
-}
-
 .course-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 20px;
 }
 
 .course-card {
@@ -43,17 +33,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s;
-}
-
-.course-card:active {
-  transform: scale(0.97);
-}
-
-.card-icon {
-  font-size: 32px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .bottom-nav {
@@ -63,10 +45,6 @@
   display: flex;
   justify-content: space-around;
   padding: 15px;
-  border-top: 1px solid #e2e8f0;
-}
-
-.nav-item {
+  border-top: 1px solid #eee;
   font-size: 24px;
-  cursor: pointer;
 }
