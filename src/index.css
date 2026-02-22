@@ -1,100 +1,63 @@
+/* Purana mita kar ye paste karein */
 :root {
   --primary: #6366f1;
   --bg: #f8fafc;
-  --white: #ffffff;
 }
 
-body { margin: 0; padding: 0; background: var(--bg); font-family: 'Segoe UI', sans-serif; }
+body { 
+  margin: 0; 
+  background: var(--bg); 
+  font-family: 'Segoe UI', sans-serif; 
+}
 
 .mobile-screen {
   max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
-  position: relative;
   background: var(--bg);
 }
 
-/* Header Styling */
 .attendx-header {
-  background: var(--white);
+  background: #ffffff;
   padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  justify-content: space-between;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.logo-section { display: flex; align-items: center; gap: 10px; }
-.brand-name { font-size: 20px; margin: 0; color: var(--primary); font-weight: 800; letter-spacing: -0.5px; }
-.logo-icon { font-size: 24px; }
-.notif-btn { background: #f1f5f9; border: none; padding: 8px; border-radius: 10px; font-size: 18px; }
+.brand-name { 
+  font-size: 22px; 
+  margin: 0; 
+  color: var(--primary); 
+  font-weight: 800; 
+}
 
-/* Content Area */
 .content { padding: 20px; }
-.welcome-banner { margin-bottom: 25px; }
-.welcome-banner p { margin: 0; color: #64748b; font-size: 14px; }
-.welcome-banner h2 { margin: 5px 0 0 0; color: #1e293b; font-size: 24px; }
 
-.stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
-.stat-card { background: var(--white); padding: 15px; border-radius: 16px; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-.stat-card .label { font-size: 12px; color: #94a3b8; margin-bottom: 5px; }
-.stat-card .value { font-size: 22px; font-weight: 700; }
-.value.green { color: #10b981; }
-.value.red { color: #f43f5e; }
+.stats-row { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 15px; 
+  margin: 20px 0; 
+}
 
-/* Main Button */
-.mark-area { margin-bottom: 30px; }
+.stat-card { 
+  background: white; 
+  padding: 15px; 
+  border-radius: 15px; 
+  text-align: center; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
 .main-action-btn {
   width: 100%;
   background: var(--primary);
   border: none;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 18px;
+  border-radius: 15px;
   color: white;
-  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
-  cursor: pointer;
-  transition: transform 0.2s;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
 }
-.main-action-btn:active { transform: scale(0.98); }
-.btn-text { display: block; font-size: 18px; font-weight: 800; letter-spacing: 1px; }
-.btn-subtext { font-size: 12px; opacity: 0.8; }
-
-/* History Section */
-.history-list h3 { font-size: 18px; color: #1e293b; margin-bottom: 15px; }
-.history-card {
-  background: var(--white);
-  padding: 15px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 12px;
-}
-.date-info { background: #f1f5f9; padding: 10px; border-radius: 12px; text-align: center; min-width: 50px; }
-.date-info .day { font-size: 10px; text-transform: uppercase; margin: 0; color: #64748b; }
-.date-info .num { font-size: 18px; font-weight: 700; margin: 0; color: #1e293b; }
-.status-info { flex: 1; }
-.status-info .title { margin: 0; font-weight: 600; font-size: 14px; }
-.status-info .time { margin: 0; font-size: 12px; color: #94a3b8; }
-.status-tag { padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
-.status-tag.present { background: #dcfce7; color: #166534; }
-
-/* Bottom Nav */
-.bottom-navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 480px;
-  margin: 0 auto;
-  background: var(--white);
-  display: flex;
-  justify-content: space-around;
-  padding: 15px;
-  border-top: 1px solid #f1f5f9;
-}
-.nav-icon { font-size: 22px; filter: grayscale(1); opacity: 0.5; }
-.nav-icon.active { filter: grayscale(0); opacity: 1; }
