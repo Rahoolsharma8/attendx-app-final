@@ -3,45 +3,43 @@ import './App.css';
 
 function App() {
   const courses = [
-    { id: 1, name: 'CS1', color: '#66bb6a', icon: '📚' },
-    { id: 2, name: 'CS2', color: '#42a5f5', icon: '💻' },
-    { id: 3, name: 'CS3', color: '#ff7043', icon: '🔬' },
-    { id: 4, name: 'CS4', color: '#9575cd', icon: '🎓' },
+    { id: 1, name: 'CS1 - Database', color: '#4CAF50', icon: '📚' },
+    { id: 2, name: 'CS2 - Networking', color: '#2196F3', icon: '💻' },
+    { id: 3, name: 'CS3 - Algorithms', color: '#FF5722', icon: '🔬' },
+    { id: 4, name: 'CS4 - Web Tech', color: '#673AB7', icon: '🎓' },
   ];
 
   return (
     <div className="app-container">
       <header className="header">
-        <span style={{fontSize: '24px'}}>🎓</span>
-        <h1>UMPK Portal</h1>
+        <span style={{fontSize: '24px'}}>🎯</span>
+        <h1 style={{fontSize: '20px'}}>AttendX Portal</h1>
       </header>
 
       <main className="main-content">
-        <div className="title-section">
-          <h2 style={{margin: '0', fontSize: '28px'}}>Database</h2>
-          <p style={{color: '#666', marginTop: '5px'}}>CS Management</p>
-        </div>
+        <h2>Dashboard</h2>
+        <p style={{color: '#666'}}>Welcome back, Parshant</p>
 
         <div className="course-list">
-          {courses.map((course) => (
+          {courses.map(course => (
             <div key={course.id} className="course-card" style={{backgroundColor: course.color}}>
-              <div className="card-text">
-                <h3 style={{margin: '0', color: 'white'}}>{course.name}</h3>
-                <span style={{fontSize: '14px', opacity: 0.8, color: 'white'}}>Enrolled</span>
+              <div>
+                <h3 style={{margin: 0}}>{course.name}</h3>
+                <span style={{fontSize: '12px', opacity: 0.8}}>Enrolled</span>
               </div>
-              <div className="card-icon">{course.icon}</div>
+              <span style={{fontSize: '30px'}}>{course.icon}</span>
             </div>
           ))}
         </div>
       </main>
 
       <nav className="bottom-nav">
-        <div className="nav-item">🏠</div>
-        <div className="nav-item">📚</div>
-        <div className="nav-item">👤</div>
+        <span>🏠</span>
+        <span>📊</span>
+        <span>👤</span>
       </nav>
     </div>
   );
 }
 
-export default App; // <--- Ye line check karein, ye hona zaroori hai!
+export default App;
