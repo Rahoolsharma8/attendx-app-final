@@ -1,13 +1,21 @@
-android {
-    compileSdk 36  // Yahan 34 ki jagah 36 karein
-
-    defaultConfig {
-        applicationId "com.your.appid"
-        minSdk 22
-        targetSdk 36 // Yahan bhi 34 ki jagah 36 karein
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
     }
-    // ... baaki code
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.1'
+        classpath 'com.google.gms:google-services:4.4.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
