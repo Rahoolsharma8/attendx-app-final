@@ -1,24 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    // Yahan direct number likh dein, koi variable use na karein
-    compileSdk 36 
+    namespace "com.your.package.name" // <-- YE LINE ADD KAREIN
+    compileSdk 36
 
     defaultConfig {
-        applicationId "com.your.appid" // Yahan apna original ID rehne dena
+        applicationId "com.your.package.name" // Jo ID yahan hai, wahi upar namespace mein likhein
         minSdk 22
         targetSdk 36
         versionCode 1
         versionName "1.0"
+        
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+    // ... baaki code waisa hi rehne dein
 }
-
-// Baki niche ki dependencies waisi hi rehne dein
