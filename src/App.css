@@ -1,50 +1,97 @@
+:root {
+  --indigo: #3f51b5;
+  --silver: #e0e0e0;
+  --glass: rgba(255, 255, 255, 0.7);
+}
+
+/* Splash Screen */
+.splash-screen {
+  height: 100vh;
+  background: linear-gradient(135deg, #1a237e, #3f51b5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.splash-logo { font-size: 80px; margin-bottom: 20px; display: block; }
+.fade-in { animation: fadeIn 1.5s ease-in; }
+
+/* General Layout */
 .app-container {
   max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  background: #f0f2f5;
+  padding-bottom: 50px;
 }
 
-.header {
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.pro-header {
+  background: #1a237e;
+  color: white;
   padding: 20px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  border-bottom: 1px solid #eee;
-}
-
-.main-content {
-  padding: 20px;
-  flex: 1;
-}
-
-.course-list {
-  display: flex;
-  flex-direction: column;
   gap: 15px;
-  margin-top: 20px;
 }
 
-.course-card {
+.dept-btn {
+  width: 100%;
+  padding: 18px;
+  margin-top: 10px;
+  border-radius: 12px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-radius: 15px;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 16px;
+  color: #1a237e;
 }
 
-.bottom-nav {
-  position: sticky;
-  bottom: 0;
+.class-dropdown {
   background: white;
-  display: flex;
-  justify-content: space-around;
-  padding: 15px;
-  border-top: 1px solid #eee;
-  font-size: 24px;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
 }
+
+.class-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.student-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: white;
+}
+
+.pa-buttons button {
+  width: 40px; height: 40px; border-radius: 50%;
+  margin-left: 10px; font-weight: bold; border: 1px solid #ddd;
+}
+
+.btn-p:active { background: #4caf50; color: white; }
+.btn-a:active { background: #f44336; color: white; }
+
+.submit-btn {
+  width: 100%; padding: 18px; background: #1a237e;
+  color: white; border: none; border-radius: 12px;
+  margin-top: 20px; font-weight: bold; cursor: pointer;
+}
+
+.pro-footer {
+  text-align: center; font-size: 12px; color: #777;
+  padding: 20px;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
