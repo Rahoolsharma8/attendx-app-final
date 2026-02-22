@@ -1,29 +1,13 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+android {
+    compileSdk 36  // Yahan 34 ki jagah 36 karein
 
-buildscript {
-    
-    repositories {
-        google()
-        mavenCentral()
+    defaultConfig {
+        applicationId "com.your.appid"
+        minSdk 22
+        targetSdk 36 // Yahan bhi 34 ki jagah 36 karein
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.13.0'
-        classpath 'com.google.gms:google-services:4.4.4'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-apply from: "variables.gradle"
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+    // ... baaki code
 }
