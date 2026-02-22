@@ -1,97 +1,98 @@
 :root {
-  --indigo: #3f51b5;
-  --silver: #e0e0e0;
-  --glass: rgba(255, 255, 255, 0.7);
+  --indigo: #1a237e;
+  --indigo-light: #3f51b5;
+  --silver: #f0f2f5;
+  --glass: rgba(255, 255, 255, 0.85);
+  --green: #10b981;
+  --red: #ef4444;
 }
+
+body { margin: 0; background: var(--silver); font-family: 'Segoe UI', sans-serif; }
 
 /* Splash Screen */
 .splash-screen {
   height: 100vh;
-  background: linear-gradient(135deg, #1a237e, #3f51b5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
+  background: linear-gradient(135deg, var(--indigo), var(--indigo-light));
+  display: flex; justify-content: center; align-items: center;
+  color: white; text-align: center;
 }
-.splash-logo { font-size: 80px; margin-bottom: 20px; display: block; }
-.fade-in { animation: fadeIn 1.5s ease-in; }
+.splash-logo { font-size: 80px; display: block; margin-bottom: 10px; }
+.fade-in { animation: fadeIn 1.5s ease; }
 
-/* General Layout */
+/* Layout & Containers */
 .app-container {
-  max-width: 480px;
-  margin: 0 auto;
-  min-height: 100vh;
-  background: #f0f2f5;
-  padding-bottom: 50px;
+  max-width: 480px; margin: 0 auto; min-height: 100vh;
+  background: var(--silver); position: relative;
 }
 
 .glass {
   background: var(--glass);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .pro-header {
-  background: #1a237e;
-  color: white;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  background: var(--indigo); color: white;
+  padding: 20px; display: flex; align-items: center; gap: 15px;
 }
 
+.main-content { padding: 20px; }
+.dashboard-title { font-size: 26px; margin: 0; color: #1e293b; }
+.subtitle { color: #64748b; margin-bottom: 25px; }
+
+/* Department Buttons */
 .dept-btn {
-  width: 100%;
-  padding: 18px;
-  margin-top: 10px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  font-size: 16px;
-  color: #1a237e;
+  width: 100%; padding: 20px; border-radius: 15px;
+  border: none; display: flex; justify-content: space-between;
+  font-weight: 700; color: var(--indigo); margin-bottom: 10px;
+  font-size: 16px; transition: 0.3s;
 }
 
 .class-dropdown {
-  background: white;
-  border-radius: 0 0 12px 12px;
-  overflow: hidden;
+  background: white; margin-top: -10px; margin-bottom: 15px;
+  border-radius: 0 0 15px 15px; overflow: hidden;
+  animation: slideDown 0.3s ease-out;
 }
 
 .class-item {
-  padding: 15px 20px;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
+  padding: 15px 20px; border-bottom: 1px solid #f1f5f9;
+  display: flex; justify-content: space-between; cursor: pointer;
+}
+
+/* Marking Page */
+.pro-input {
+  width: 100%; padding: 12px; margin-bottom: 10px;
+  border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
 }
 
 .student-card {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  background: white;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px; border-radius: 15px; margin-bottom: 12px;
+  transition: 0.3s;
 }
 
 .pa-buttons button {
-  width: 40px; height: 40px; border-radius: 50%;
-  margin-left: 10px; font-weight: bold; border: 1px solid #ddd;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid #ddd; font-weight: bold; margin-left: 8px;
+  transition: 0.2s; cursor: pointer;
 }
 
-.btn-p:active { background: #4caf50; color: white; }
-.btn-a:active { background: #f44336; color: white; }
+.active-p { background: var(--green) !important; color: white; border-color: var(--green) !important; }
+.active-a { background: var(--red) !important; color: white; border-color: var(--red) !important; }
+
+.border-p { border-left: 6px solid var(--green); }
+.border-a { border-left: 6px solid var(--red); }
 
 .submit-btn {
-  width: 100%; padding: 18px; background: #1a237e;
-  color: white; border: none; border-radius: 12px;
-  margin-top: 20px; font-weight: bold; cursor: pointer;
+  width: 100%; padding: 20px; background: var(--indigo);
+  color: white; border: none; border-radius: 15px;
+  font-weight: bold; font-size: 16px; margin-top: 10px;
 }
 
-.pro-footer {
-  text-align: center; font-size: 12px; color: #777;
-  padding: 20px;
-}
+.back-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+.pro-footer { text-align: center; padding: 20px; color: #94a3b8; font-size: 12px; }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideDown { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
