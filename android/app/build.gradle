@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "com.umpk.attendance"
-    compileSdk 34
+    compileSdk 35 // Ise 35 kar dete hain taake plugin 8.7.3 ke saath compatible rahe
 
     defaultConfig {
         applicationId "com.umpk.attendance"
@@ -26,6 +26,15 @@ android {
     }
 }
 
+// YE WALA HISSA ERROR FIX KAREGA (FORCE VERSIONS)
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.core:core:1.12.0'
+        force 'androidx.core:core-ktx:1.12.0'
+        force 'androidx.activity:activity:1.8.0'
+    }
+}
+
 repositories {
     flatDir {
         dirs 'libs'
@@ -37,12 +46,9 @@ dependencies {
     implementation project(':capacitor-android')
     implementation project(':capacitor-cordova-android-plugins')
     
-    // Stable Versions to avoid AGP errors
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "com.google.android.material:material:1.10.0"
     implementation "androidx.core:core-splashscreen:1.0.1"
-    implementation "androidx.core:core:1.12.0"
-    implementation "androidx.activity:activity:1.8.0"
     
     testImplementation "junit:junit:4.13.2"
     androidTestImplementation "androidx.test.ext:junit:1.1.5"
