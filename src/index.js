@@ -1,68 +1,68 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import './index.css';
 
 function App() {
-  const [date, setDate] = useState(new Date().toLocaleDateString());
-  const [userName, setUserName] = useState("Parshant");
-
   return (
-    <div className="app-container">
-      {/* Header Section */}
-      <header className="app-header">
-        <div className="header-content">
-          <h1>AttendX</h1>
-          <p className="subtitle">{date}</p>
+    <div className="mobile-screen">
+      {/* Real App Header */}
+      <header className="attendx-header">
+        <div className="logo-section">
+          <span className="logo-icon">🎯</span>
+          <h1 className="brand-name">AttendX</h1>
         </div>
-        <div className="profile-circle">{userName.charAt(0)}</div>
+        <button className="notif-btn">🔔</button>
       </header>
 
-      <main className="main-content">
-        {/* Stats Section */}
-        <div className="stats-grid">
-          <div className="stat-card blue">
-            <span>Total Days</span>
-            <h2>24</h2>
+      <main className="content">
+        {/* User Welcome */}
+        <div className="welcome-banner">
+          <p>Hello, Parshant!</p>
+          <h2>Make your mark today</h2>
+        </div>
+
+        {/* Quick Stats Grid */}
+        <div className="stats-row">
+          <div className="stat-card">
+            <span className="label">Present</span>
+            <span className="value green">22</span>
           </div>
-          <div className="stat-card green">
-            <span>Present</span>
-            <h2>20</h2>
-          </div>
-          <div className="stat-card red">
-            <span>Absent</span>
-            <h2>4</h2>
+          <div className="stat-card">
+            <span className="label">Absent</span>
+            <span className="value red">02</span>
           </div>
         </div>
 
-        {/* Action Card */}
-        <div className="card attendance-card">
-          <h3>Daily Attendance</h3>
-          <p>Mark your status for today</p>
-          <div className="button-group">
-            <button className="btn-primary">Present</button>
-            <button className="btn-outline">Absent</button>
-          </div>
+        {/* Action Button Section */}
+        <div className="mark-area">
+          <button className="main-action-btn">
+            <span className="btn-text">MARK ATTENDANCE</span>
+            <span className="btn-subtext">Click to scan or mark</span>
+          </button>
         </div>
 
-        {/* Recent History */}
-        <div className="history-section">
+        {/* Activity List */}
+        <div className="history-list">
           <h3>Recent History</h3>
-          <div className="history-item">
-            <div className="date-box">21 Feb</div>
-            <div className="status present">Present</div>
-          </div>
-          <div className="history-item">
-            <div className="date-box">20 Feb</div>
-            <div className="status absent">Absent</div>
+          <div className="history-card">
+            <div className="date-info">
+              <p className="day">Mon</p>
+              <p className="num">22</p>
+            </div>
+            <div className="status-info">
+              <p className="title">Main Office</p>
+              <p className="time">09:15 AM</p>
+            </div>
+            <span className="status-tag present">Present</span>
           </div>
         </div>
       </main>
 
-      {/* Bottom Navigation Bar */}
-      <nav className="bottom-nav">
-        <button className="nav-item active">🏠 Home</button>
-        <button className="nav-item">📊 Stats</button>
-        <button className="nav-item">⚙️ Settings</button>
+      {/* Floating Bottom Nav */}
+      <nav className="bottom-navbar">
+        <div className="nav-icon active">🏠</div>
+        <div className="nav-icon">📅</div>
+        <div className="nav-icon">📊</div>
+        <div className="nav-icon">⚙️</div>
       </nav>
     </div>
   );
