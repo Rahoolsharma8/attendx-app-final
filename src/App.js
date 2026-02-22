@@ -1,7 +1,5 @@
 import React from 'react';
-// Agar App.css nahi mil rahi, toh ye line error degi. 
-// Pehle file banayein phir ye import chalega.
-import './App.css'; 
+import './index.css'; // <-- Sirf is line ko theek karna hai
 
 function App() {
   return (
@@ -12,6 +10,7 @@ function App() {
           <h1 className="brand-name">AttendX</h1>
         </div>
       </header>
+      {/* ... baaki ka code wahi rahega jo maine pehle diya tha */}
 
       <main className="content">
         <div className="welcome-banner">
