@@ -1,63 +1,40 @@
-/* Purana mita kar ye paste karein */
 :root {
   --primary: #6366f1;
   --bg: #f8fafc;
 }
 
-body { 
-  margin: 0; 
-  background: var(--bg); 
-  font-family: 'Segoe UI', sans-serif; 
-}
+body { margin: 0; background: var(--bg); font-family: sans-serif; }
 
-.mobile-screen {
-  max-width: 480px;
-  margin: 0 auto;
-  min-height: 100vh;
-  background: var(--bg);
-}
+.mobile-screen { max-width: 480px; margin: 0 auto; min-height: 100vh; background: var(--bg); }
 
 .attendx-header {
-  background: #ffffff;
+  background: white;
   padding: 15px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.brand-name { 
-  font-size: 22px; 
-  margin: 0; 
-  color: var(--primary); 
-  font-weight: 800; 
-}
+.brand-name { color: var(--primary); font-size: 22px; font-weight: 800; margin: 0; }
 
 .content { padding: 20px; }
 
-.stats-row { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  gap: 15px; 
-  margin: 20px 0; 
-}
+.welcome-banner h2 { margin-top: 5px; color: #1e293b; }
 
-.stat-card { 
-  background: white; 
-  padding: 15px; 
-  border-radius: 15px; 
-  text-align: center; 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-}
+.stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+
+.stat-card { background: white; padding: 15px; border-radius: 15px; text-align: center; }
+
+.value.green { color: #10b981; font-weight: bold; font-size: 20px; }
+.value.red { color: #f43f5e; font-weight: bold; font-size: 20px; }
 
 .main-action-btn {
   width: 100%;
   background: var(--primary);
+  color: white;
   border: none;
   padding: 18px;
   border-radius: 15px;
-  color: white;
   font-weight: bold;
-  font-size: 16px;
   box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
 }
