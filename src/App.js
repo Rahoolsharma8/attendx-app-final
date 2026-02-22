@@ -12,22 +12,22 @@ function App() {
   return (
     <div className="app-container">
       <header className="header">
-        <span>🎓</span>
+        <span style={{fontSize: '24px'}}>🎓</span>
         <h1>UMPK Portal</h1>
       </header>
 
       <main className="main-content">
         <div className="title-section">
-          <h2>Database</h2>
-          <p>CS Management</p>
+          <h2 style={{margin: '0', fontSize: '28px'}}>Database</h2>
+          <p style={{color: '#666', marginTop: '5px'}}>CS Management</p>
         </div>
 
         <div className="course-list">
-          {courses.map(course => (
+          {courses.map((course) => (
             <div key={course.id} className="course-card" style={{backgroundColor: course.color}}>
               <div className="card-text">
-                <h3>{course.name}</h3>
-                <span>Enrolled</span>
+                <h3 style={{margin: '0', color: 'white'}}>{course.name}</h3>
+                <span style={{fontSize: '14px', opacity: 0.8, color: 'white'}}>Enrolled</span>
               </div>
               <div className="card-icon">{course.icon}</div>
             </div>
@@ -36,12 +36,12 @@ function App() {
       </main>
 
       <nav className="bottom-nav">
-        <span>🏠</span>
-        <span>📚</span>
-        <span>👤</span>
+        <div className="nav-item">🏠</div>
+        <div className="nav-item">📚</div>
+        <div className="nav-item">👤</div>
       </nav>
     </div>
   );
 }
 
-export default App;
+export default App; // <--- Ye line check karein, ye hona zaroori hai!
