@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css'; // <-- Sirf is line ko theek karna hai
+import './index.css'; // <--- Sirf ye rakhein, App.css wali line mita dein
 
 function App() {
   return (
@@ -10,7 +10,6 @@ function App() {
           <h1 className="brand-name">AttendX</h1>
         </div>
       </header>
-      {/* ... baaki ka code wahi rahega jo maine pehle diya tha */}
 
       <main className="content">
         <div className="welcome-banner">
